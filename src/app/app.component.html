@@ -1,0 +1,17 @@
+<h2>Information</h2>
+<p>Product name: {{ product.name }}</p>
+<p>Color: {{ product.color }}</p>
+<p>Price:{{ product.price + "$" }}</p>
+<p>Discount Price: {{ GetDiscountPrice().toFixed(2) + "$" }}</p>
+<input type="text" [(ngModel)]="typingText" />
+<br />
+<p *ngIf="typingText != ''">
+  You are typing: <strong> {{ typingText }} </strong>
+</p>
+<h3>List Brand</h3>
+<a
+  *ngFor="let item of listItem; let i = index"
+  href="#"
+  [ngStyle]="{ color: (i + 1) % 2 == 0 ? 'red' : '' }"
+  >{{ i + 1 }}: {{ item }}</a
+>
